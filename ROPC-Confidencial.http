@@ -1,0 +1,22 @@
+//https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-oauth-ropc
+@tenant = TENANT
+@clientID = CLIENTID
+@clientSecret= CLIENTSECRET
+
+@user = USER
+@pass = PASSWORD
+
+
+#### Confidential Client 
+POST https://login.microsoftonline.com/{{tenant}}/oauth2/v2.0/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id={{clientID}}
+&scope=user.read openid profile offline_access
+&username={{user}}
+&password={{pass}}
+&grant_type=password
+&client_secret={{clientSecret}}
+
+
+

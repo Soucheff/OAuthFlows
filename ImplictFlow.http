@@ -1,0 +1,8 @@
+https://login.microsoftonline.com/TENANT/oauth2/v2.0/authorize?
+client_id=CLIENTID
+&redirect_uri=https://jwt.ms
+&scope=profile openid
+&response_type=id_token
+&response_mode=fragment
+&state=zqd5jnwtxqc
+&nonce=1w8pu6r29fc

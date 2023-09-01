@@ -1,0 +1,31 @@
+#### Copy and past in the browser
+#### RFC PKCE https://datatracker.ietf.org/doc/html/rfc7636
+#### code_challenge = BASE64URL-ENCODE(SHA256(ASCII(code_verifier)))
+https://login.microsoftonline.com/TENANT/oauth2/v2.0/authorize?
+client_id=CLIENTID
+&response_type=code
+&redirect_uri=https://jwt.ms
+&code_challenge=iBq189d8I8uw7s7gZ7jtHSou6SpNokdM_O4Rr8C9ETc
+&code_challenge_method=S256
+&scope=openid
+&state=12345
+
+
+#### Second Part
+#### Copy code from the previuos step
+@tenant = TENANT
+@clientID = CLIENTID
+@clientSecret=CLIENTSECRET
+@code=CODE
+@codeVerifier = XlLy1qJrWjx8fDXiYSUfCR2KuasiOEXi7E79Ow0BN0J
+@code=CODE
+POST https://login.microsoftonline.com/{{tenant}}/oauth2/v2.0/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id={{clientID}}
+&scope=openid
+&redirect_uri=https://jwt.ms
+&grant_type=authorization_code
+&client_secret={{clientSecret}}
+&code={{code}}
+&code_verifier={{codeVerifier}}
